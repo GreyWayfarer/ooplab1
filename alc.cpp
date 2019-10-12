@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
 
-    int n = 10, m = 10, *p, **a, i, j, M = n * m, x = 0;
+    int n = 10, m = 10, *p, **a, i, j, M = n * m, x = 0, c1, c2, r1, r2;
     
     a = new int * [n];
     for (i = 0; i < n; i++) {
@@ -49,7 +49,7 @@ int main() {
     }
     m = 9; n = 9;
     p[x] = a[m][n];//task 1.b
-*/
+
 
     m = 0, n = 9;//task 1.a works
     for (i = 8; i >= 0; i--) {
@@ -73,6 +73,33 @@ int main() {
     }
     m = 9; n = 0;
     p[x] = a[m][n];//task 1.a
+
+    n = 9;//task 1.c works
+    for (j = 0; j <= n/2; j++) {
+        c1 = n/2 - j;
+        c2 = n/2 + j + 1;
+        r1 = n/2 - j;
+        r2 = n/2  + j + 1;
+        for (i = c1; i < c2; i++) {
+            p[x] = a[r1][i];
+            x++;
+        }
+        for (i = r1; i < r2; i++) {
+            p[x] = a[i][c2];
+            x++;
+        }
+        for (i = c2; i > c1 - 1; i--) {
+            p[x] = a[r2][i];
+            x++;
+        }
+        for (i = r2; i > r1 - 1; i--) {
+            p[x] = a[i][c1 - 1];
+            x++;
+        }
+    }//task 1.c*/
+
+
+
 
     for (i = 0; i < 100; i++) {
         cout << p[i] << " ";
