@@ -98,8 +98,29 @@ int main() {
         }
     }//task 1.c*/
 
-
-
+    n = 9;//task 1.d works
+    for (j = 0; j <=n/2; j++) {
+        c1 = j;
+        c2 = n - j;
+        r1 = j;
+        r2 = n - j;
+        for (i = c1; i < c2; i++) {
+            p[x] = a[r1][i];
+            x++;
+        }
+        for (i = r1; i < r2; i++) {
+            p[x] = a[i][c2];
+            x++;
+        }
+        for (i = c2; i > c1; i--) {
+            p[x] = a[r2][i];
+            x++;
+        }
+        for (i = r2; i > r1; i--) {
+            p[x] = a[i][c1];
+            x++;
+        }
+    } 
 
     for (i = 0; i < 100; i++) {
         cout << p[i] << " ";
