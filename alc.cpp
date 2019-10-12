@@ -3,9 +3,9 @@ using namespace std;
 
 int main() {
 
-    int n = 10, m = 10, *p, **a, i, j, M = n * m, x = 0, c1, c2, r1, r2;
+    int n = 10, m = 10, *p, **a, i, j, M = n * m, x = 0, c1, c2, r1, r2, **c;
     
-    a = new int * [n];
+/*    a = new int * [n];
     for (i = 0; i < n; i++) {
         a[i] = new int [m];
     }
@@ -28,7 +28,7 @@ int main() {
 
 
 
-/*    n = 0, m = 0;//task 1.b. m - rows, n - colls; works
+    n = 0, m = 0;//task 1.b. m - rows, n - colls; works
     for (i = 1; i <= 9; i++) {
         for (n; n >= 0; n --) {
             p[x] = a[m][n];
@@ -96,7 +96,7 @@ int main() {
             p[x] = a[i][c1 - 1];
             x++;
         }
-    }//task 1.c*/
+    }//task 1.c
 
     n = 9;//task 1.d works
     for (j = 0; j <=n/2; j++) {
@@ -120,11 +120,38 @@ int main() {
             p[x] = a[i][c1];
             x++;
         }
-    } 
+    }
+
 
     for (i = 0; i < 100; i++) {
         cout << p[i] << " ";
     }
+        cout << endl;*/
+
+
+    /*task 2*/ //m.b. works
+
+    n = 10, m = 10;
+    c = new int * [n];
+    for (i = 0; i < n; i++) {
+        c[i] = new int [m];
+    }
+    
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < (m = rand() % 10); j++) {
+            c[i][j] = rand() % 20;
+            cout << c[i][j] << '\t';
+        }
         cout << endl;
+    }
+
+    /*for(i = 0; i < 10; i++) {
+        cout << endl;
+        for (j = 0; j < 10; j++) {
+            cout << a[i][j] << "\t";
+        }
+    }
+    cout << endl;*/
+
     return 0;
 }
