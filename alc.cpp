@@ -28,7 +28,7 @@ int main() {
 
 
 
-    n = 0, m = 0;//task 1.b. m - rows, n - colls; works
+/*    n = 0, m = 0;//task 1.b. m - rows, n - colls; works
     for (i = 1; i <= 9; i++) {
         for (n; n >= 0; n --) {
             p[x] = a[m][n];
@@ -49,6 +49,30 @@ int main() {
     }
     m = 9; n = 9;
     p[x] = a[m][n];//task 1.b
+*/
+
+    m = 0, n = 9;//task 1.a works
+    for (i = 8; i >= 0; i--) {
+        for (n;n <= 9; n++) {
+            p[x] = a[m][n];
+            m++;
+            x++;
+        }
+        n = i;
+        m = 0;
+    }
+    for (i = 1; i <=9; i++) {
+         while (m <= 9) {
+             p[x] = a[m][n];
+             m++;
+             n++;
+             x++;
+         }
+         m = i;
+         n = 0;
+    }
+    m = 9; n = 0;
+    p[x] = a[m][n];//task 1.a
 
     for (i = 0; i < 100; i++) {
         cout << p[i] << " ";
