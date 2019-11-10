@@ -145,13 +145,5 @@ int main() {
         cout << endl;
     }
 
-    /*for(i = 0; i < 10; i++) {
-        cout << endl;
-        for (j = 0; j < 10; j++) {
-            cout << a[i][j] << "\t";
-        }
-    }
-    cout << endl;*/
-
     return 0;
 }
